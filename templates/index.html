@@ -5,6 +5,26 @@
     <title>Title</title>
 </head>
 <body>
-<р1>Новая страница ура</р1>
+
+{% if object_list %}
+<table border=1>
+    <tr>
+        <th>Id</th>
+        <th>Data</th>
+        <th>Name</th>
+        <th>Phone</th>
+    </tr>
+    {% for obj in object_list %}
+    <tr>
+        <th>{{ obj.id }}</th>
+        <th>{{ obj.order_data }}</th>
+        <th>{{ obj.order_name }}</th>
+        <th>{{ obj.order_phone }}</th>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No object_list</p>
+{% endif %}
 </body>
 </html>
