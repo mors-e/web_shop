@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
     'crm',
     'cms',
+    'price',
 ]
 
 MIDDLEWARE = [
@@ -124,8 +125,6 @@ TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
-USE_L10N = True
-
 USE_TZ = True
 
 
@@ -133,7 +132,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATICFILES_DIRS = [
-    BASE_DIR / "webshop/static"
+    os.path.join(BASE_DIR, "config/static/"),
 ]
 
 STATIC_URL = '/static/'

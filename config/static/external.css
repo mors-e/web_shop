@@ -52,7 +52,6 @@
 
 .text-3 {
   color: rgb(10, 77, 125);
-  /*font-family: arial;*/
   font-size: 2em;
   text-align: center;
   padding-top: 7%;
@@ -68,8 +67,6 @@
 }
 
 .class_form {
-  /*color: #fff;*/
-  /*font-size: 2em;*/
   text-align: center;
   padding-bottom: 7%;
 }
