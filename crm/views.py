@@ -6,7 +6,6 @@ from price.models import PriceCard, PriceTable
 from telebot.sendmessage import send_telegram
 
 
-# Create your views here.
 def first_page(request):
     slider_list = CmsSlider.objects.all()
 
@@ -29,11 +28,14 @@ def first_page(request):
 
 
 def thanks_page(request):
-    name = request.POST['name']
-    phone = request.POST['phone']
-    element = Order(order_name=name, order_phone=phone)
-    element.save()
-    send_telegram(telegram_name=name, telegram_phone=phone)
-    return render(request, './thanks.html', {'name': name,
-                                             'phone': phone
-                                             })
+    if request.POST:
+        name = request.POST['name']
+        phone = request.POST['phone']
+        element = Order(order_name=name, order_phone=phone)
+        element.save()
+        send_telegram(telegram_name=name, telegram_phone=phone)
+        return render(request, './thanks.html', {'name': name,
+                                                 'phone': phone
+                                                 })
+    else:
+        return render(request, './thanks.html')
